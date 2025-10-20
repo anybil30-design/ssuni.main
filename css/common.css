@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+/* pc, tablet, mobile 공통서식 */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body{
+  font-family: "Nanum Gothic", "맑은 고딕", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:0.81rem;
+  /* 0.81rem = 81% = 13px */
+  color: #333;
+}
+
+a{color:#333; text-decoration:none;}
+ul,ol,li{list-style:none;}
+
+/* 토글버튼을 위한 체크박스, 모바일, 태블릿에서 보여지는 토글버튼, 검색아이콘 마바일에서만 보이게, nav태그 안에 있는 '닫기'버튼, 메인메뉴 옆 화살표 아이콘 */
+#toggle_btn ,#t_btn,.gnb_wrap > label,.gnb > li > a > i.fas,.m_search{display: none;}
+
+input:focus{outline:none;}
+
+/* 상단 헤더영역 서식 */
+header{width: 100%;}
+.header_inner{
+  width: 1200px; height: 72px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 로고 서식 */
+.header_inner h1{
+  width: 196px;
+  transform:translateY(20px);
+}
+.header_inner h1 img{width: 100%;}
+
+/* 오른쪽 상단 내비게이션 서식 */
+.header_inner .lnb{
+  position: absolute;
+  right:10px; top:14px;
+}
+.lnb ul{display:flex;}
+.lnb a{
+  text-transform: uppercase;
+  font-size:13px;
+  border-right: 1px solid #ccc;
+  padding: 0px 10px;
+}
+.header_inner .lnb a:hover{text-decoration: underline;}
+.header_inner .lnb li:nth-child(6) a{border: none;}
+
+/* 검색박스 서식 */
+#sh{
+  border: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+  height: 24px;
+  text-align:center;
+}
+#sh + label i.fas{
+  font-size: 18px;
+  transform: translate(-23px, 2px);
+}
+
+/* 메인 2단 내비게이션 서식 */
+/* 메인메뉴 서식 */
+.gnb_wrap{
+  width: 100%; height: 40px;
+  background: rgba(255,255,255,0.9);
+  transition: 0.5s;
+  overflow: hidden;
+  position: absolute; /* 아래 콘텐츠와 겹치게 */
+  z-index: 6;
+}
+
+/* .gnb메뉴에 마우스 오버시 높이 260변경 */
+
+.gnb{
+  width: 1200px;
+  margin:0 auto;
+  display: flex;
+  justify-content:right;
+}
+.gnb > li{
+  margin:0 3.4%;
+  text-align: center;
+  position: relative; /* .sub의 기준~ */
+}
+.gnb > li > a{
+  font-size: 16px;
+  padding: 0 6px; /* 반응 영역 넓혀줌 */
+  display: block; /* 크기값 설정 가능 */
+  line-height:40px; /* .gnb와 줄높이를 맞추기 위함 */
+}
+.gnb > li:nth-child(4) .sub{width: 110px;left: -15px;}
+.gnb > li > a:hover{color: #ff9900;}
+.gnb > li > a::after{
+  display: block;
+  content:"";height: 2px;
+  background: #ff9900;
+  transform: translateY(-3px) scale(0);
+  transition: 0.3s
+}
+.gnb > li > a:hover::after{
+  transform: translateY(-3px) scale(1);
+}
+
+/* 서브메뉴 서식 */
+.sub{
+  /* 블럭요소에 포지션 absolute적용시 가로크기 없어짐 */
+  position:absolute;
+  width: 100%;    /* 강제로 크기를 갖도록 함. */
+}
+.sub > li > a{
+  line-height: 40px;
+  display: block;   /* 반응하는 영역을 늘리기 위함 */
+  font-size: 14px;
+}
+.sub > li > a:hover{text-decoration: underline;}
+
+
+/* 하단 푸터영역 서식 */
+footer{
+  background-color: rgb(241,241,241);
+  width: 100%;
+  padding: 10px 0px;
+  border-top: 1px solid #bdbdbd;
+}
+.f_inner{width: 1200px;margin: 0 auto;}
+.f_lnb > ul{display: flex;justify-content: left;}
+.f_lnb > ul > li{margin:0px 10px;}
+.f_lnb > ul > li > a{line-height: 160%;}
+
+/* sns서식 */
+.sns > ul{display: flex;justify-content: right;}
+.sns > ul > li{margin: 0 2px;}
+
+/* address서식 */
+address{font-style: normal;}
+address > p{line-height: 28px;}
